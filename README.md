@@ -1,4 +1,4 @@
 # WriteHere
 (Name todo)
 
-A remalke/improvement of typehere.co
+A remake/improvement of typehere.co
