@@ -1,18 +1,24 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
-const Textbox = styled.textarea`
-    width: 100vw;
-    height: calc("100vh - 10px");
-    resize: none;
-`
+const Textbox = styled.textarea.attrs({
+  autoFocus: true,
+})`
+  width: 100%;
+  height: calc(100vh - 35px);
+  margin: 0;
+  outline: none;
+  border: none;
+  padding: 10px;
 
-type Props = {}
+  resize: none;
+`;
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+type Props = {};
 
 const Writer = (props: Props) => {
-  return (
-    <Textbox />
-  )
-}
+  return <Textbox />;
+};
 
-export default Writer
+export default Writer;
