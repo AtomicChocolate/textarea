@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { SaveStatus } from "../utilities/types/SaveStatus";
 import Export from "./footer/Export";
+import SaveStatusText from "./footer/SaveStatusText";
 
 const FooterBar = styled.footer`
   position: fixed;
   height: auto;
-  width: 100vh;
+  width: 100%;
   font-size: 10px;
   bottom: 0px;
 
@@ -13,13 +15,16 @@ const FooterBar = styled.footer`
   background-color: lightgray;
 `;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type Props = {};
+type Props = {
+  text: string;
+  saveStatus: SaveStatus;
+};
 
 const Footer = (props: Props) => {
   return (
     <FooterBar>
-      <Export />
+      <Export text={props.text} />
+      <SaveStatusText saveStatus={props.saveStatus} />
     </FooterBar>
   );
 };

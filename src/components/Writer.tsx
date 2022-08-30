@@ -14,11 +14,27 @@ const Textbox = styled.textarea.attrs({
   resize: none;
 `;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type Props = {};
+type Props = {
+  text: string;
+  setText: (value: string) => void;
+};
+
+function onChange(
+  setState: (value: string) => void,
+  event: React.ChangeEvent<HTMLTextAreaElement>
+) {
+  setState(event.currentTarget.value);
+}
 
 const Writer = (props: Props) => {
-  return <Textbox />;
+  return (
+    <Textbox
+      value={props.text}
+      onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+        onChange(props.setText, event)
+      }
+    />
+  );
 };
 
 export default Writer;
