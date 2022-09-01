@@ -5,7 +5,7 @@ import { FooterP } from "../../styles/footer/p";
 import { SaveStatus } from "../../utilities/types/SaveStatus";
 
 type Props = {
-  saveStatus: SaveStatus;
+  saveStatus: boolean;
 };
 
 const Status = (props: Props) => {

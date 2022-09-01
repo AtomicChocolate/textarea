@@ -16,7 +16,7 @@ const Textbox = styled.textarea.attrs({
 
 type Props = {
   text: string;
-  setText: (value: string) => void;
+  saveText: (value: string) => void;
 };
 
 function onChange(
@@ -31,7 +31,7 @@ const Writer = (props: Props) => {
     <Textbox
       value={props.text}
       onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
-        onChange(props.setText, event)
+        onChange(props.saveText, event)
       }
     />
   );

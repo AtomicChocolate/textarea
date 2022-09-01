@@ -17,7 +17,7 @@ const FooterBar = styled.footer`
 
 type Props = {
   text: string;
-  saveStatus: SaveStatus;
+  saveStatus: boolean;
 };
 
 const Footer = (props: Props) => {
