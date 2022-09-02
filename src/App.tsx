@@ -14,6 +14,7 @@ function SaveText(text: string, setText: (text: string) => void) {
 	MakeSave(text);
 	if (text === GetSave()) {
 		setText(text);
+		console.log("Saved!");
 	} else {
 		console.warn("Couldn't save text!");
 		//TODO warn the user in app
@@ -25,7 +26,7 @@ function App() {
 
 	return (
 		<Main>
-			<Writer text={text} saveText={() => SaveText(text, setText)} />
+			<Writer text={text} saveText={(newText) => SaveText(newText, setText)} />
 			<Footer text={text} saveStatus={text === GetSave()} />
 		</Main>
 	);
