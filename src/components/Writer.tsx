@@ -9,7 +9,10 @@ const Textbox = styled.textarea.attrs({
 	margin: 0;
 	outline: none;
 	border: none;
-	padding: 10px;
+	padding: 30px;
+	/* font-size: 1.25em; */
+	font-size: 2em;
+	line-height: 1.3em;
 
 	resize: none;
 `;

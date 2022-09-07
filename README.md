@@ -1,5 +1,5 @@
-# WriteHere
+# textarea.site
 
-(Name todo)
+A remake/improvement of typehere.co. Same auto-saving textbox, but with some basic utility features like themes, exporting to a text file, and sharing with a link.
 
-A remake/improvement of typehere.co
+Icon created by Freepik - Flaticon
