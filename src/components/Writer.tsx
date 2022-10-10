@@ -15,6 +15,8 @@ const Textbox = styled.textarea.attrs({
 	line-height: 1.3em;
 
 	resize: none;
+	background-color: inherit;
+	color: inherit;
 `;
 
 type Props = {

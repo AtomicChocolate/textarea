@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Writer from "./components/Writer";
 import Footer from "./components/Footer";
 import { GetSave, MakeSave } from "./utilities/Saving";
@@ -9,6 +9,9 @@ const Main = styled.div`
 	width: 100%;
 	margin: 0;
 	overflow: hidden;
+
+	background-color: ${(props) => props.theme.backgroundColor};
+	color: ${(props) => props.theme.textColor};
 `;
 
 function SaveText(text: string, setText: (text: string) => void) {
@@ -27,15 +30,20 @@ function App() {
 	const [UITheme, setUITheme] = useState(UIThemes.Light); // TODO
 
 	return (
-		<Main>
-			<Writer text={text} saveText={(newText) => SaveText(newText, setText)} />
-			<Footer
-				text={text}
-				saveStatus={text === GetSave()}
-				UITheme={UITheme}
-				setUITheme={setUITheme}
-			/>
-		</Main>
+		<ThemeProvider theme={UITheme}>
+			<Main>
+				<Writer
+					text={text}
+					saveText={(newText) => SaveText(newText, setText)}
+				/>
+				<Footer
+					text={text}
+					saveStatus={text === GetSave()}
+					UITheme={UITheme}
+					setUITheme={setUITheme}
+				/>
+			</Main>
+		</ThemeProvider>
 	);
 }
 

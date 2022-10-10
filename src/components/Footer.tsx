@@ -14,7 +14,7 @@ const FooterBar = styled.footer`
 	bottom: 0px;
 
 	outline: solid black 1px;
-	background-color: lightgray;
+	background-color: ${(props) => props.theme.footerBackgroundColor};
 `;
 
 type Props = {
