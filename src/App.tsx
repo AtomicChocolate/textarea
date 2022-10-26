@@ -29,9 +29,9 @@ function App() {
 	const [text, setText] = useState(GetSave() || "Welcome!");
 	const [UITheme, setUITheme] = useState(UIThemes[0]); // TODO
 
-	// For changing it from a Select list: gets the index of it in a table and uses that
-	function updateUITheme(newTheme: ThemeEntry) {
-		const found = UIThemes.find((theme) => theme.label == newTheme.label);
+	// For changing it from a select list: gets the index of the given label in a table and uses that
+	function updateUITheme(newTheme: string) {
+		const found = UIThemes.find((theme) => theme.label == newTheme);
 		if (!found) {
 			return;
 		}

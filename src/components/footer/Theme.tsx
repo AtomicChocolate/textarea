@@ -1,31 +1,34 @@
 import React from "react";
 import Select, { ActionMeta, SingleValue } from "react-select";
 import UIThemes, { ThemeEntry } from "../../utilities/UIThemes";
+import { FooterSelect } from "../../styles/footer/select";
 
 type Props = {
-	setUITheme: (newTheme: ThemeEntry) => void;
+	setUITheme: (newTheme: string) => void;
 	UITheme: ThemeEntry;
 };
 
 function onChange(
-	setUITheme: (newTheme: ThemeEntry) => void,
-	newValue: SingleValue<ThemeEntry> | null
+	setUITheme: (newTheme: string) => void,
+	event: React.ChangeEvent<HTMLSelectElement>
 ) {
-	if (!newValue) {
-		return;
-	}
-	setUITheme(newValue);
+	setUITheme(event.currentTarget.value);
 }
 
 const Theme = (props: Props) => {
 	return (
-		<Select
-			options={UIThemes}
-			value={props.UITheme}
-			onChange={(newValue: SingleValue<ThemeEntry>) =>
-				onChange(props.setUITheme, newValue)
+		<FooterSelect
+			value={props.UITheme.label}
+			onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+				onChange(props.setUITheme, event)
 			}
-		/>
+		>
+			{UIThemes.map((theme) => (
+				<option key={theme.label} value={theme.label}>
+					{theme.label}
+				</option>
+			))}
+		</FooterSelect>
 	);
 };
 

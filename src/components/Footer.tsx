@@ -22,7 +22,7 @@ type Props = {
 	text: string;
 	saveStatus: boolean;
 	UITheme: ThemeEntry;
-	setUITheme: (newTheme: ThemeEntry) => void;
+	setUITheme: (newTheme: string) => void;
 };
 
 const Footer = (props: Props) => {
