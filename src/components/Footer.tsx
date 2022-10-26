@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SaveStatus } from "../utilities/types/SaveStatus";
 import ThemeData from "../utilities/types/ThemeData";
+import { ThemeEntry } from "../utilities/UIThemes";
 import Export from "./footer/Export";
 import SaveStatusText from "./footer/SaveStatusText";
 import Theme from "./footer/Theme";
@@ -20,8 +21,8 @@ const FooterBar = styled.footer`
 type Props = {
 	text: string;
 	saveStatus: boolean;
-	UITheme: ThemeData;
-	setUITheme: (newTheme: ThemeData) => void;
+	UITheme: ThemeEntry;
+	setUITheme: (newTheme: ThemeEntry) => void;
 };
 
 const Footer = (props: Props) => {
@@ -29,7 +30,7 @@ const Footer = (props: Props) => {
 		<FooterBar>
 			<Export text={props.text} />
 			{/* <SaveStatusText saveStatus={props.saveStatus} /> */}
-			<Theme UITheme={props.UITheme} />
+			<Theme setUITheme={props.setUITheme} UITheme={props.UITheme} />
 		</FooterBar>
 	);
 };

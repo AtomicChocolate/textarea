@@ -1,18 +1,31 @@
 import React from "react";
-import ThemeData from "../../utilities/types/ThemeData";
+import Select, { ActionMeta, SingleValue } from "react-select";
+import UIThemes, { ThemeEntry } from "../../utilities/UIThemes";
 
 type Props = {
-	UITheme: ThemeData;
+	setUITheme: (newTheme: ThemeEntry) => void;
+	UITheme: ThemeEntry;
 };
+
+function onChange(
+	setUITheme: (newTheme: ThemeEntry) => void,
+	newValue: SingleValue<ThemeEntry> | null
+) {
+	if (!newValue) {
+		return;
+	}
+	setUITheme(newValue);
+}
 
 const Theme = (props: Props) => {
 	return (
-		<select>
-			<option value="dark">Dark</option>
-			<option value="light">Light</option>
-			<option value="solarized-dark">Solarized Dark</option>
-		</select>
-		// TODO
+		<Select
+			options={UIThemes}
+			value={props.UITheme}
+			onChange={(newValue: SingleValue<ThemeEntry>) =>
+				onChange(props.setUITheme, newValue)
+			}
+		/>
 	);
 };
 

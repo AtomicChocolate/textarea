@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Writer from "./components/Writer";
 import Footer from "./components/Footer";
 import { GetSave, MakeSave } from "./utilities/Saving";
-import UIThemes from "./utilities/types/UIThemes";
+import UIThemes, { ThemeEntry } from "./utilities/UIThemes";
 const Main = styled.div`
 	height: 100%;
 	width: 100%;
@@ -27,10 +27,19 @@ function SaveText(text: string, setText: (text: string) => void) {
 
 function App() {
 	const [text, setText] = useState(GetSave() || "Welcome!");
-	const [UITheme, setUITheme] = useState(UIThemes.Light); // TODO
+	const [UITheme, setUITheme] = useState(UIThemes[0]); // TODO
+
+	// For changing it from a Select list: gets the index of it in a table and uses that
+	function updateUITheme(newTheme: ThemeEntry) {
+		const found = UIThemes.find((theme) => theme.label == newTheme.label);
+		if (!found) {
+			return;
+		}
+		setUITheme(found);
+	}
 
 	return (
-		<ThemeProvider theme={UITheme}>
+		<ThemeProvider theme={UITheme.value}>
 			<Main>
 				<Writer
 					text={text}
@@ -40,7 +49,7 @@ function App() {
 					text={text}
 					saveStatus={text === GetSave()}
 					UITheme={UITheme}
-					setUITheme={setUITheme}
+					setUITheme={updateUITheme}
 				/>
 			</Main>
 		</ThemeProvider>
