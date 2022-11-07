@@ -1,5 +1,4 @@
 import React from "react";
-import Select, { ActionMeta, SingleValue } from "react-select";
 import UIThemes, { ThemeEntry } from "../../utilities/UIThemes";
 import { FooterSelect } from "../../styles/footer/select";
 
