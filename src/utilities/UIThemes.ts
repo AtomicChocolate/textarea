@@ -14,17 +14,17 @@ type ThemeEntry = {
 const UIThemes = [
 	{
 		value: {
-			backgroundColor: "#000",
-			textColor: "#FFF",
+			backgroundColor: "#222",
+			textColor: "#eee",
 			footerBackgroundColor: "#333",
 		},
 		label: "Dark",
 	},
 	{
 		value: {
-			backgroundColor: "#FFF",
-			textColor: "#000",
-			footerBackgroundColor: "#CCC",
+			backgroundColor: "#eee",
+			textColor: "#222",
+			footerBackgroundColor: "#dedede",
 		},
 		label: "Light",
 	},

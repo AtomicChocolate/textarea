@@ -14,6 +14,8 @@ const FooterBar = styled.footer`
 	font-size: 10px;
 	bottom: 0px;
 
+	display: flex;
+
 	outline: solid black 1px;
 	background-color: ${(props) => props.theme.footerBackgroundColor};
 `;
