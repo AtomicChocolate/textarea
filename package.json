@@ -1,12 +1,12 @@
 {
-	"name": "writehere",
-	"version": "2.0.0",
+	"name": "textarea",
+	"version": "2.1.0",
 	"author": {
 		"name": "James Stubbs",
 		"email": "james@realja.me",
 		"url": "https://realja.me"
 	},
-	"homepage": "https://atomicchocolate.github.io/textarea",
+	"homepage": "./textarea",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/AtomicChocolate/textarea.git"
