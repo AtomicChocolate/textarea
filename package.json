@@ -6,7 +6,7 @@
 		"email": "james@realja.me",
 		"url": "https://realja.me"
 	},
-	"homepage": "./textarea",
+	"homepage": "./",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/AtomicChocolate/textarea.git"
