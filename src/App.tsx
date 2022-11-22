@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Writer from "./components/Writer";
 import Footer from "./components/Footer";
 import { GetSave, MakeSave } from "./utilities/Saving";
-import UIThemes, { ThemeEntry } from "./utilities/UIThemes";
+import UIThemes from "./utilities/UIThemes";
 const Main = styled.div`
 	height: 100%;
 	width: 100%;
