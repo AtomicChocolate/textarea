@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/textarea/static/js/main.66d2d1dd.js",
-    "service-worker.js": "/textarea/service-worker.js",
-    "index.html": "/textarea/index.html",
-    "main.66d2d1dd.js.map": "/textarea/static/js/main.66d2d1dd.js.map"
+    "main.js": "./textarea/static/js/main.e7c62686.js",
+    "service-worker.js": "./textarea/service-worker.js",
+    "index.html": "./textarea/index.html",
+    "main.e7c62686.js.map": "./textarea/static/js/main.e7c62686.js.map"
   },
   "entrypoints": [
-    "static/js/main.66d2d1dd.js"
+    "static/js/main.e7c62686.js"
   ]
 }

@@ -1,6 +1,11 @@
 {
-	"short_name": "textarea.site",
+	"short_name": "Textarea",
 	"name": "textarea.site",
+	"description": "A simple textbox to instantly start writing.",
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#dbdbdb",
+	"background_color": "#1b1b1b",
 	"icons": [
 		{
 			"src": "favicon.ico",
@@ -8,18 +13,14 @@
 			"type": "image/x-icon"
 		},
 		{
-			"src": "logo-transparent-192.png",
+			"src": "logo-background-192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "logo-transparent-512.png",
+			"src": "logo-background-512.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
-	],
-	"start_url": ".",
-	"display": "standalone",
-	"theme_color": "#dbdbdb",
-	"background_color": "#1b1b1b"
+	]
 }
