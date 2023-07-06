@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UIThemes, { ThemeEntry } from "../../utilities/UIThemes";
 import { FooterSelect } from "../../styles/footer/select";
 
@@ -15,6 +15,11 @@ function onChange(
 }
 
 const Theme = (props: Props) => {
+	useEffect(() => {
+		const deviceColor = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+		// TODO GET COLOR SCHEME
+	})
 	return (
 		<FooterSelect
 			value={props.UITheme.label}
