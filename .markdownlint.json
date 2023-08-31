@@ -1,0 +1,21 @@
+{
+    "default": true,
+    "line-length": {
+        "code_block_line_length": 999,
+        "line_length": 999
+    },
+    "no-trailing-punctuation": {
+        "punctuation": ".,;:。，；：！"
+    },
+    "no-inline-html": {
+        "allowed_elements": [
+            "a",
+            "br",
+            "marquee",
+            "small",
+            "source",
+            "video"
+        ]
+    },
+    "no-emphasis-as-header": false
+}

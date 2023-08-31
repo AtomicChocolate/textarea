@@ -40,6 +40,7 @@ function App() {
 
 	return (
 		<ThemeProvider theme={UITheme.value}>
+			<p className="bg-purple-700">hi</p>
 			<Main>
 				<Writer
 					text={text}

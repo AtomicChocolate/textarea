@@ -4,22 +4,22 @@ import styled from "styled-components";
 const Textbox = styled.textarea.attrs({
 	autoFocus: true,
 })`
-	box-sizing: border-box;
-	width: 100vw;
-	height: 100vh;
-	margin: 0;
-	outline: none;
-	border: none;
-	padding: 30px;
-	/* font-size: 1.25em; */
-	font-size: 2em;
-	line-height: 1.3em;
+	// box-sizing: border-box;
+	// width: 100vw;
+	// height: 100vh;
+	// margin: 0;
+	// outline: none;
+	// border: none;
+	// padding: 30px;
+	// /* font-size: 1.25em; */
+	// font-size: 2em;
+	// line-height: 1.3em;
 
-	resize: none;
-	background-color: inherit;
-	color: inherit;
+	// resize: none;
+	// background-color: inherit;
+	// color: inherit;
 
-	overflow: auto;
+	// overflow: auto;
 `;
 
 type Props = {
@@ -41,6 +41,7 @@ const Writer = (props: Props) => {
 			onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
 				onChange(props.saveText, event)
 			}
+			className="w-full"
 		/>
 	);
 };
