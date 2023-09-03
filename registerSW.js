@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/%3CREPO%3E/sw.js', { scope: '/%3CREPO%3E/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('https://real-jame.github.io/textarea/sw.js', { scope: 'https://real-jame.github.io/textarea/' })})}
