@@ -5,15 +5,6 @@ import Export from "./footer/Export";
 import Theme from "./footer/Theme";
 
 const FooterBar = styled.footer`
-	position: fixed;
-	height: auto;
-	width: 100%;
-	font-size: 10px;
-	bottom: 0px;
-
-	display: flex;
-
-	outline: solid black 1px;
 	background-color: ${(props) => props.theme.footerBackgroundColor};
 `;
 
@@ -26,10 +17,15 @@ type Props = {
 
 const Footer = (props: Props) => {
 	return (
-		<FooterBar>
-			<Export text={props.text} />
-			{/* <SaveStatusText saveStatus={props.saveStatus} /> */}
-			<Theme setUITheme={props.setUITheme} UITheme={props.UITheme} />
+		<FooterBar className="fixed bottom-0 h-auto w-screen text-xs px-1 flex justify-between">
+			{/* left side */}
+			<div className="flex gap-1">
+				<Export text={props.text} />
+			</div>
+			{/* right side */}
+			<div className="flex gap-1">
+				<Theme setUITheme={props.setUITheme} UITheme={props.UITheme} />
+			</div>
 		</FooterBar>
 	);
 };

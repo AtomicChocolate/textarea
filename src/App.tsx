@@ -4,12 +4,8 @@ import Writer from "./components/Writer";
 import Footer from "./components/Footer";
 import { GetSave, MakeSave } from "./utilities/Saving";
 import UIThemes from "./utilities/UIThemes";
-const Main = styled.div`
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	overflow: hidden;
 
+const Main = styled.main`
 	background-color: ${(props) => props.theme.backgroundColor};
 	color: ${(props) => props.theme.textColor};
 `;
@@ -40,8 +36,7 @@ function App() {
 
 	return (
 		<ThemeProvider theme={UITheme.value}>
-			<p className="bg-purple-700">hi</p>
-			<Main>
+			<Main className="h-screen w-screen m-0 overflow-hidden">
 				<Writer
 					text={text}
 					saveText={(newText) => SaveText(newText, setText)}

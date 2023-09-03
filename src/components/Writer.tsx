@@ -1,26 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-
-const Textbox = styled.textarea.attrs({
-	autoFocus: true,
-})`
-	// box-sizing: border-box;
-	// width: 100vw;
-	// height: 100vh;
-	// margin: 0;
-	// outline: none;
-	// border: none;
-	// padding: 30px;
-	// /* font-size: 1.25em; */
-	// font-size: 2em;
-	// line-height: 1.3em;
-
-	// resize: none;
-	// background-color: inherit;
-	// color: inherit;
-
-	// overflow: auto;
-`;
 
 type Props = {
 	text: string;
@@ -36,12 +14,13 @@ function onChange(
 
 const Writer = (props: Props) => {
 	return (
-		<Textbox
+		<textarea
 			value={props.text}
 			onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
 				onChange(props.saveText, event)
 			}
-			className="w-full"
+			autoFocus={true}
+			className="w-full h-screen bg-inherit text-inherit border-none text-xl p-4"
 		/>
 	);
 };
