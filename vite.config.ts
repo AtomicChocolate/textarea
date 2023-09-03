@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.VITE_BASE_URL || '/',
+  base: "/<REPO>/",
   plugins: [react(), VitePWA({ registerType: 'autoUpdate' })],
   test: {
     globals: true,
