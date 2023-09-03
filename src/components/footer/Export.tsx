@@ -1,7 +1,6 @@
 // A utility that downloads the current text as a .txt file onto the user's device.
 
 import React from "react";
-import { FooterButton } from "../../styles/footer/button";
 
 type Props = {
 	text: string;

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import UIThemes, { ThemeEntry } from "../../utilities/UIThemes";
-import { FooterSelect } from "../../styles/footer/select";
 
 type Props = {
 	setUITheme: (newTheme: string) => void;
