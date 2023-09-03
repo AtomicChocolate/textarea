@@ -6,7 +6,7 @@
 		"email": "james@realja.me",
 		"url": "https://realja.me"
 	},
-	"homepage": "./",
+	"homepage": "https://real-jame.github.io/textarea/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/real-jame/textarea.git"
@@ -38,12 +38,13 @@
 	},
 	"scripts": {
 		"nightly-predeploy": "npm run build",
-		"nightly-deploy": "gh-pages -d build",
+		"nightly-deploy": "gh-pages -d dist",
 		"start": "vite",
 		"build": "tsc && vite build",
 		"serve": "vite preview",
 		"test": "vitest",
-		"test:coverage": "vitest run --coverage --watch=false"
+		"test:coverage": "vitest run --coverage --watch=false",
+		"preview": "vite preview --port 8080"
 	},
 	"browserslist": {
 		"production": [
