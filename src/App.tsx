@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Writer from "./components/Writer";
 import Footer from "./components/Footer";
+import About from "./components/About";
 import { GetSave, MakeSave } from "./utilities/Saving";
 import UIThemes from "./utilities/UIThemes";
 
@@ -33,15 +34,21 @@ function App() {
 	}, [UITheme]);
 
 	return (
-		<main className={`h-screen w-screen m-0 overflow-hidden`}>
-			<Writer text={text} saveText={(newText) => SaveText(newText, setText)} />
-			<Footer
-				text={text}
-				saveStatus={text === GetSave()}
-				UITheme={UITheme}
-				setUITheme={updateUITheme}
-			/>
-		</main>
+		<>
+			<About></About>
+			<main className={`h-screen w-screen m-0 overflow-hidden`}>
+				<Writer
+					text={text}
+					saveText={(newText) => SaveText(newText, setText)}
+				/>
+				<Footer
+					text={text}
+					saveStatus={text === GetSave()}
+					UITheme={UITheme}
+					setUITheme={updateUITheme}
+				/>
+			</main>
+		</>
 	);
 }
 

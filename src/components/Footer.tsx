@@ -2,6 +2,7 @@ import React from "react";
 import Export from "./footer/Export";
 import Theme from "./footer/Theme";
 import { ThemeEntry } from "../utilities/UIThemes";
+import { AboutButton } from "./About";
 
 type Props = {
 	text: string;
@@ -19,6 +20,7 @@ const Footer = (props: Props) => {
 			</div>
 			{/* right side */}
 			<div className="flex gap-1 bg-inherit text-inherit">
+				<AboutButton></AboutButton>
 				<Theme setUITheme={props.setUITheme} UITheme={props.UITheme} />
 			</div>
 		</footer>
