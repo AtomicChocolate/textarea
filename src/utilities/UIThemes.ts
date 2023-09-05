@@ -1,34 +1,35 @@
-type ThemeData = {
-	[key: string]: string;
-	// name: string;
-	backgroundColor: string;
-	textColor: string;
-	footerBackgroundColor: string;
-};
-
-type ThemeEntry = {
-	value: ThemeData;
+export type ThemeEntry = {
+	className: string;
 	label: string;
+	category: string;
 };
 
 const UIThemes = [
 	{
-		value: {
-			backgroundColor: "#222",
-			textColor: "#eee",
-			footerBackgroundColor: "#333",
-		},
-		label: "Dark",
+		className: "theme-dark",
+		label: "Default Dark",
+		category: "Dark",
 	},
 	{
-		value: {
-			backgroundColor: "#eee",
-			textColor: "#222",
-			footerBackgroundColor: "#dedede",
-		},
-		label: "Light",
+		className: "theme-monokai",
+		label: "Monokai",
+		category: "Dark",
+	},
+	{
+		className: "theme-solarizeddark",
+		label: "Solarized Dark",
+		category: "Dark",
+	},
+	{
+		className: "theme-light",
+		label: "Default Light",
+		category: "Light",
+	},
+	{
+		className: "theme-solarizedlight",
+		label: "Solarized Light",
+		category: "Light",
 	},
 ] as ThemeEntry[];
 
 export default UIThemes;
-export type { ThemeEntry, ThemeData };

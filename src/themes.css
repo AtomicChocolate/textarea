@@ -1,0 +1,58 @@
+body {
+	background-color: #eee;
+	color: #222;
+}
+
+/* DARK THEMES */
+
+/* Default Dark */
+body.theme-dark {
+	background-color: #222;
+	color: #eee;
+
+	footer {
+		background-color: #333;
+	}
+}
+
+/* Monokai */
+body.theme-monokai {
+	background-color: #272822;
+	color: #d6d6d6;
+
+	footer {
+		background-color: #404339;
+	}
+}
+
+/* Solarized Dark */
+body.theme-solarizeddark {
+	background-color: #002b36;
+	color: #cccccc;
+
+	footer {
+		background-color: #00212b;
+	}
+}
+
+/* LIGHT THEMES */
+
+/* Default Light */
+body.theme-light {
+	background-color: #eee;
+	color: #222;
+
+	footer {
+		background-color: #dedede;
+	}
+}
+
+/* Solarized Light */
+body.theme-solarizedlight {
+	background-color: #fdf6e3;
+	color: #333;
+
+	footer {
+		background-color: #eee8d5;
+	}
+}

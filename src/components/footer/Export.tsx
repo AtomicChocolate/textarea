@@ -16,7 +16,13 @@ function handleClick(text: string) {
 
 const Export = (props: Props) => {
 	return (
-		<button onClick={() => handleClick(props.text)} className="bg-inherit text-inherit rounded border border-gray-100 p-1">Export</button>
+		<button
+			type="button"
+			onClick={() => handleClick(props.text)}
+			className="bg-inherit text-inherit rounded border border-gray-100 p-1"
+		>
+			Export
+		</button>
 	);
 };
 

@@ -15,6 +15,7 @@ function onChange(
 const Writer = (props: Props) => {
 	return (
 		<textarea
+			aria-label="Writer"
 			value={props.text}
 			onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
 				onChange(props.saveText, event)

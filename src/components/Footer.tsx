@@ -1,12 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import { ThemeEntry } from "../utilities/UIThemes";
 import Export from "./footer/Export";
 import Theme from "./footer/Theme";
-
-const FooterBar = styled.footer`
-	background-color: ${(props) => props.theme.footerBackgroundColor};
-`;
+import { ThemeEntry } from "../utilities/UIThemes";
 
 type Props = {
 	text: string;
@@ -17,16 +12,16 @@ type Props = {
 
 const Footer = (props: Props) => {
 	return (
-		<FooterBar className="fixed bottom-0 h-auto w-screen text-xs px-1 flex justify-between">
+		<footer className="fixed bottom-0 h-auto w-screen text-xs px-1 flex justify-between">
 			{/* left side */}
-			<div className="flex gap-1">
+			<div className="flex gap-1 bg-inherit text-inherit">
 				<Export text={props.text} />
 			</div>
 			{/* right side */}
-			<div className="flex gap-1">
+			<div className="flex gap-1 bg-inherit text-inherit">
 				<Theme setUITheme={props.setUITheme} UITheme={props.UITheme} />
 			</div>
-		</FooterBar>
+		</footer>
 	);
 };
 
