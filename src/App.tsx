@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 import Writer from "./components/Writer";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import { GetSave, MakeSave } from "./utilities/Saving";
 import UIThemes from "./utilities/UIThemes";
+import Settings, { SettingsContext } from "./components/Settings";
 
 function SaveText(text: string, setText: (text: string) => void) {
 	MakeSave(text);
@@ -17,8 +18,8 @@ function SaveText(text: string, setText: (text: string) => void) {
 }
 
 function App() {
-	const [text, setText] = useState(GetSave() || "Welcome!");
-	const [UITheme, setUITheme] = useState(UIThemes[0]);
+	const [text, setText] = React.useState(GetSave() || "Welcome!");
+	const [UITheme, setUITheme] = React.useState(UIThemes[0]);
 
 	function updateUITheme(newTheme: string) {
 		const found = UIThemes.find((theme) => theme.label == newTheme);
@@ -28,27 +29,33 @@ function App() {
 		setUITheme(found);
 	}
 
-	useEffect(() => {
+	React.useEffect(() => {
 		// Theme changing is applied through CSS
 		document.body.className = UITheme.className;
 	}, [UITheme]);
 
+	const [settingsData, updateSettings] = React.useState({
+		panelVisible: false,
+		// TODO: actual settings like font type, etc.
+	});
+
 	return (
-		<>
-			<About />
-			<main className={`h-screen w-screen m-0 overflow-hidden`}>
+		<main className="h-screen w-screen m-0 overflow-hidden focus-visible:outline-none">
+			<SettingsContext.Provider value={settingsData}>
+				<About />
 				<Writer
 					text={text}
 					saveText={(newText) => SaveText(newText, setText)}
 				/>
+				<Settings />
 				<Footer
 					text={text}
 					saveStatus={text === GetSave()}
 					UITheme={UITheme}
 					setUITheme={updateUITheme}
 				/>
-			</main>
-		</>
+			</SettingsContext.Provider>
+		</main>
 	);
 }
 

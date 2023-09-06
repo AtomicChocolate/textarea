@@ -1,16 +1,12 @@
-import React from "react";
 import InstallPWA from "./InstallPWA";
+import icon from "../assets/logo-background-192.png";
 
 const About = () => {
 	return (
 		<div className="about invisible flex flex-grow max-h-0 transition-all">
 			{/* left */}
-			<div className="flex-1 text-center">
-				<img
-					src="/logo-background-192.png"
-					alt=""
-					className="rounded-3xl mx-auto"
-				/>
+			<div className="flex-1 text-center p-4 overflow-y-auto">
+				<img src={icon} alt="" className="rounded-3xl mx-auto" />
 				<h1 className="text-4xl font-bold">textarea.site v3</h1>
 				<p>
 					textarea.site is a persistent textbox that will hold on to whatever
@@ -43,7 +39,7 @@ const About = () => {
 				<InstallPWA />
 			</div>
 			{/* right */}
-			<div className="flex-1 text-left overflow-y-scroll">
+			<div className="flex-1 text-left overflow-y-auto">
 				<h1 className="text-4xl font-bold text-center">Releases</h1>
 				<div>
 					<h2 className="text-3xl font-medium">
@@ -155,9 +151,9 @@ const About = () => {
 
 function handleClick() {
 	// idc
-	const aboutDiv = document.querySelector(".about");
-	if (aboutDiv) {
-		aboutDiv.classList.toggle("show-about");
+	const div = document.querySelector(".about");
+	if (div) {
+		div.classList.toggle("show-about");
 	}
 }
 

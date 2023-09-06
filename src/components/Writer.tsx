@@ -21,7 +21,7 @@ const Writer = (props: Props) => {
 				onChange(props.saveText, event)
 			}
 			autoFocus={true}
-			className="w-full h-screen bg-inherit text-inherit border-none text-xl p-4"
+			className="w-full h-screen bg-inherit text-inherit border-none focus-visible:outline-none text-xl p-4"
 		/>
 	);
 };
