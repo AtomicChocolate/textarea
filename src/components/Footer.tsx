@@ -20,7 +20,7 @@ const Footer = (props: Props) => {
 			</div>
 			{/* right side */}
 			<div className="flex gap-1 bg-inherit text-inherit">
-				<AboutButton></AboutButton>
+				<AboutButton />
 				<Theme setUITheme={props.setUITheme} UITheme={props.UITheme} />
 			</div>
 		</footer>

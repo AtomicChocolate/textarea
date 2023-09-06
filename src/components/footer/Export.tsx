@@ -19,7 +19,7 @@ const Export = (props: Props) => {
 		<button
 			type="button"
 			onClick={() => handleClick(props.text)}
-			className="bg-inherit text-inherit rounded border border-gray-100 p-1"
+			className="bg-inherit text-inherit rounded border p-1"
 		>
 			Export
 		</button>

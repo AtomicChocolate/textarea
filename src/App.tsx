@@ -35,7 +35,7 @@ function App() {
 
 	return (
 		<>
-			<About></About>
+			<About />
 			<main className={`h-screen w-screen m-0 overflow-hidden`}>
 				<Writer
 					text={text}

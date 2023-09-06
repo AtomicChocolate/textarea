@@ -30,17 +30,13 @@ const Theme = (props: Props) => {
 			onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
 				onChange(props.setUITheme, event.currentTarget.value)
 			}
-			className="bg-inherit text-inherit rounded border border-gray-100 p-1 self-end"
+			className="bg-inherit text-inherit rounded border p-1 self-end"
 		>
 			{categories.map((category) => (
-				<optgroup key={category} label={category} className="text-inherit">
+				<optgroup key={category} label={category}>
 					{UIThemes.filter((theme) => theme.category === category).map(
 						(theme) => (
-							<option
-								key={theme.label}
-								value={theme.label}
-								className="text-inherit"
-							>
+							<option key={theme.label} value={theme.label}>
 								{theme.label}
 							</option>
 						)
