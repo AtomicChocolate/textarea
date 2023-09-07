@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.about,
+.settings {
+	transition-property: max-height;
+}
+
+.show-about,
+.show-settings {
+	visibility: visible;
+	height: 50vh;
+	max-height: 50vh;
+}
