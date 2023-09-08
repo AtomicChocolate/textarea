@@ -1,5 +1,7 @@
 <script lang="ts">
-  import Nested from "./Nested.svelte";
+  import Writer from "./components/Writer.svelte";
+
+
 </script>
 
 <!-- <style>
@@ -11,6 +13,5 @@
 </style> -->
 
 <main>
-  <p class="text-purple-800 font-serif text-4xl">This is a paragraph.</p>
-  <Nested />
+  <Writer />
 </main>
