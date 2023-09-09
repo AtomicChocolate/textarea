@@ -1,17 +1,9 @@
 <script lang="ts">
+  import Footer from "./components/Footer.svelte";
   import Writer from "./components/Writer.svelte";
-
-
 </script>
-
-<!-- <style>
-  p {
-    color: goldenrod;
-    font-family: "Comic Sans MS", cursive;
-    font-size: 2em;
-  }
-</style> -->
 
 <main>
   <Writer />
+  <Footer />
 </main>
