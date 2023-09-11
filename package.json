@@ -1,39 +1,42 @@
 {
-	"name": "textarea",
-	"version": "3.0.0",
-	"author": {
-		"name": "James",
-		"email": "james@realja.me",
-		"url": "https://realja.me"
-	},
-	"homepage": "https://real-jame.github.io/textarea/",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/real-jame/textarea.git"
-	},
-	"bugs": {
-		"url": "https://github.com/real-jame/textarea/issues",
-		"email": "james@realja.me"
-	},
-	"license": "AGPL-3.0",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"start": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-check --tsconfig ./tsconfig.json"
-	},
-	"devDependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.4.2",
-		"@tsconfig/svelte": "^5.0.0",
-		"autoprefixer": "^10.4.15",
-		"postcss": "^8.4.29",
-		"svelte": "^4.0.5",
-		"svelte-check": "^3.4.6",
-		"tailwindcss": "^3.3.3",
-		"tslib": "^2.6.0",
-		"typescript": "^5.0.2",
-		"vite": "^4.4.5"
-	}
+  "name": "textarea",
+  "version": "3.0.0",
+  "author": {
+    "name": "James",
+    "email": "james@realja.me",
+    "url": "https://realja.me"
+  },
+  "homepage": "https://real-jame.github.io/textarea/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/real-jame/textarea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/real-jame/textarea/issues",
+    "email": "james@realja.me"
+  },
+  "license": "AGPL-3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "nightly-predeploy": "npm run build",
+    "nightly-deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "@tsconfig/svelte": "^5.0.0",
+    "autoprefixer": "^10.4.15",
+    "gh-pages": "^6.0.0",
+    "postcss": "^8.4.29",
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.6",
+    "tailwindcss": "^3.3.3",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
 }
