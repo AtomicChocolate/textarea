@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { panels } from "../utilities/PanelStore";
 	import { text } from "../utilities/TextStore";
-	import { saveText } from "../utilities/Save";
 
 	type TextareaInputEvent = {
 		currentTarget: {
@@ -17,5 +17,7 @@
 <textarea
 	bind:value={$text}
 	on:input={handleInput}
-	class="w-full h-screen bg-inherit text-inherit border-none focus-visible:outline-none text-xl p-4"
+	class={`w-full h-screen bg-inherit text-inherit border-none focus-visible:outline-none resize-none text-xl p-4 transition-all ${
+		$panels.settings ? "show-settings" : ""
+	}`}
 />

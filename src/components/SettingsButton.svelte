@@ -1,13 +1,17 @@
 <script lang="ts">
+	import { panels } from "../utilities/PanelStore";
+
 	function ShowSettings() {
-		console.log("todo");
+		$panels.settings = !$panels.settings;
 	}
 </script>
 
 <button
 	type="button"
 	on:click={ShowSettings}
-	class="bg-inherit text-inherit rounded border p-1"
+	class={`bg-inherit text-inherit rounded border p-1 ${
+		$panels.settings ? "hover" : ""
+	}`}
 >
 	Settings
 </button>

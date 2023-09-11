@@ -6,7 +6,7 @@
 
 <div
 	class={`about invisible flex flex-grow max-h-0 transition-all ${
-		$panels.settings ? "show-about" : ""
+		$panels.about ? "show-about" : ""
 	}`}
 >
 	<!-- left -->

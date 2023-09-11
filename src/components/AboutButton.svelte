@@ -2,14 +2,16 @@
 	import { panels } from "../utilities/PanelStore";
 
 	function ShowAbout() {
-		$panels.settings = !$panels.settings;
+		$panels.about = !$panels.about;
 	}
 </script>
 
 <button
 	type="button"
 	on:click={ShowAbout}
-	class="bg-inherit text-inherit rounded border p-1"
+	class={`bg-inherit text-inherit rounded border p-1 ${
+		$panels.about ? "hover" : ""
+	}`}
 >
 	About
 </button>

@@ -9,7 +9,10 @@
 
 .show-about,
 .show-settings {
-	visibility: visible;
 	height: 50vh;
+}
+
+.about.show-about, .settings.show-settings {
+	visibility: visible;
 	max-height: 50vh;
 }
