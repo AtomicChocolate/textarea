@@ -1,23 +1,21 @@
 <script lang="ts">
-  import { derived, writable } from "svelte/store";
-    import { GetSave, MakeSave } from "../utilities/Save";
+	import { text } from "../utilities/TextStore";
+	import { saveText } from "../utilities/Save";
 
-    let value = GetSave();
+	type TextareaInputEvent = {
+		currentTarget: {
+			value: string;
+		};
+	};
 
-    const _internalStore = writable(value);
-
-    // Whenever the internal value changes, update the writable store and save the data
-    _internalStore.subscribe(newValue => {
-        value = newValue;  // This might be redundant depending on your setup
-        MakeSave(newValue);
-    });
-
-    // Create a derived store from the internal store for read-only purposes
-    export const text = derived(_internalStore, $value => $value);
+	function handleInput(e: TextareaInputEvent) {
+		const updatedValue = e.currentTarget.value;
+		text.set(updatedValue);
+	}
 </script>
 
 <textarea
-  bind:value
-  on:input={(e) => MakeSave(e.currentTarget.value)}
-  class="w-full h-screen bg-inherit text-inherit border-none focus-visible:outline-none text-xl p-4"
+	bind:value={$text}
+	on:input={handleInput}
+	class="w-full h-screen bg-inherit text-inherit border-none focus-visible:outline-none text-xl p-4"
 />

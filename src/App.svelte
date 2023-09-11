@@ -1,9 +1,13 @@
 <script lang="ts">
-  import Footer from "./components/Footer.svelte";
-  import Writer from "./components/Writer.svelte";
+	import About from "./components/About.svelte";
+	import Footer from "./components/Footer.svelte";
+	import Writer from "./components/Writer.svelte";
+	import { settings } from "./utilities/SettingsStore";
+	import Themes from "./utilities/Themes";
 </script>
 
-<main>
-  <Writer />
-  <Footer />
+<main class={Themes.find((theme) => theme.label === $settings.Theme)?.class}>
+	<About />
+	<Writer />
+	<Footer />
 </main>
