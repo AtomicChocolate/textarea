@@ -40,7 +40,7 @@ function saveText(text: string): void {
 }
 
 // Settings
-function getSettings(): any {
+function getSettings(): SettingsType {
 	// Parse the JSON string from localStorage into an object
 	const settings = getFromStorage(
 		STORAGE_KEYS.SETTINGS,
@@ -49,8 +49,10 @@ function getSettings(): any {
 	return JSON.parse(settings);
 }
 
-function saveSettings(settings: any): void {
+function saveSettings(settings: SettingsType): void {
 	// Convert the settings object into a JSON string for storage
+	console.log("saving settings");
+	settings = { ...DEFAULT_SETTINGS, ...settings };
 	saveToStorage(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
 }
 
