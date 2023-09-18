@@ -9,10 +9,10 @@
 
 .show-about,
 .show-settings {
-	height: 50vh;
+	height: 50vh !important;
 }
 
 .about.show-about, .settings.show-settings {
 	visibility: visible;
-	max-height: 50vh;
+	max-height: 50vh !important;
 }

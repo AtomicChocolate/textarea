@@ -26,6 +26,8 @@ const InstallPWA = () => {
 
 export default InstallPWA; -->
 
+<!-- TODO -->
+
 <button type="button" class="rounded border p-1">
 	Install textarea.site as an app
 </button>
