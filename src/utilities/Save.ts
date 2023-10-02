@@ -4,6 +4,7 @@ const STORAGE_KEYS = {
 };
 
 export type SettingsType = {
+	[key: string]: string | boolean;
 	Theme: string;
 	WordWrap: boolean;
 	SpellCheck: boolean;
@@ -51,9 +52,13 @@ function getSettings(): SettingsType {
 
 function saveSettings(settings: SettingsType): void {
 	// Convert the settings object into a JSON string for storage
-	console.log("saving settings");
 	settings = { ...DEFAULT_SETTINGS, ...settings };
 	saveToStorage(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
 }
 
-export { getText, saveText, getSettings, saveSettings };
+function resetSettings(): void {
+	console.log("resetting settings");
+	saveSettings(DEFAULT_SETTINGS);
+}
+
+export { getText, saveText, getSettings, saveSettings, resetSettings };

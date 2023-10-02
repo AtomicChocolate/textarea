@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { panels } from "../utilities/PanelStore";
 	import { settings } from "../utilities/SettingsStore";
+	import { resetSettings } from "../utilities/Save";
+	import { allFonts } from "../utilities/GetFonts";
 
 	function ChangeSetting(setting, valueType, e) {
 		let newValue;
@@ -9,7 +11,7 @@
 				newValue = e.currentTarget.value;
 				break;
 			case "boolean":
-				newValue = e.target.checked;
+				newValue = !e.target.checked;
 				break;
 			default:
 				console.warn(
@@ -19,6 +21,8 @@
 		}
 		$settings = { ...$settings, [setting]: newValue };
 	}
+
+	let thesettings = $settings;
 </script>
 
 <div
@@ -28,9 +32,16 @@
 >
 	<h1 class="text-4xl">Settings</h1>
 	<hr />
+	<!-- TODO: friendly name for settings -->
+	<button on:click={resetSettings}>Reset Settings</button>
 	{#each Object.entries($settings) as [setting, value] (setting)}
-		<!-- <br><code>{setting} ({typeof value}) = {value}</code><br> -->
-		{#if setting !== "Theme"}
+		{#if setting === "FontFamily"}
+			<select name={setting} id={setting}
+				>{#each allFonts as fontFamily}
+					<option value={fontFamily}>{fontFamily}</option>
+				{/each}
+			</select>
+		{:else if setting !== "Theme"}
 			{#if typeof value === "string"}
 				<input
 					type="text"
@@ -44,8 +55,7 @@
 					type="checkbox"
 					title={setting}
 					name={setting}
-					bind:checked={value}
-					on:change={(e) => ChangeSetting(setting, typeof value, e)}
+					on:click={(e) => ChangeSetting(setting, typeof value, e)}
 				/>
 			{/if}
 			<label for={setting}>{setting}</label>
