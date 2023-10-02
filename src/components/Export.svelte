@@ -12,5 +12,5 @@
 
 <button
 	on:click={() => exportText($text)}
-	class="bg-inherit text-inherit rounded border p-1">Export</button
+	class="bg-inherit text-inherit rounded border p-1 h-full">Export</button
 >

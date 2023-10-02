@@ -16,7 +16,7 @@
 <select
 	aria-label="ui theme selection"
 	bind:value={$settings.Theme}
-	class="bg-inherit text-inherit rounded border p-1 self-end"
+	class="bg-inherit text-inherit rounded border p-1 self-end h-full"
 >
 	{#each categories as category}
 		<optgroup label={category}>

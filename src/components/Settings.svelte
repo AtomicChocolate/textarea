@@ -1,28 +1,11 @@
 <script lang="ts">
 	import { panels } from "../utilities/PanelStore";
-	import { settings } from "../utilities/SettingsStore";
-	import { resetSettings } from "../utilities/Save";
+	import { settings, settingsNames } from "../utilities/SettingsStore";
 	import { allFonts } from "../utilities/GetFonts";
 
-	function ChangeSetting(setting, valueType, e) {
-		let newValue;
-		switch (valueType) {
-			case "string":
-				newValue = e.currentTarget.value;
-				break;
-			case "boolean":
-				newValue = !e.target.checked;
-				break;
-			default:
-				console.warn(
-					"Tried to set a setting containing an unsupported data type"
-				);
-				return;
-		}
+	function ChangeSetting(setting: string, newValue: any) {
 		$settings = { ...$settings, [setting]: newValue };
 	}
-
-	let thesettings = $settings;
 </script>
 
 <div
@@ -32,15 +15,19 @@
 >
 	<h1 class="text-4xl">Settings</h1>
 	<hr />
-	<!-- TODO: friendly name for settings -->
-	<button on:click={resetSettings}>Reset Settings</button>
 	{#each Object.entries($settings) as [setting, value] (setting)}
 		{#if setting === "FontFamily"}
-			<select name={setting} id={setting}
+			<select
+				name={setting}
+				id={setting}
+				{value}
+				on:change={(e) => ChangeSetting(setting, e.currentTarget.value)}
 				>{#each allFonts as fontFamily}
 					<option value={fontFamily}>{fontFamily}</option>
 				{/each}
 			</select>
+			<label for={setting}>{settingsNames[setting]}</label>
+			<br />
 		{:else if setting !== "Theme"}
 			{#if typeof value === "string"}
 				<input
@@ -48,17 +35,20 @@
 					title={setting}
 					name={setting}
 					{value}
-					on:change={(e) => ChangeSetting(setting, typeof value, e)}
+					on:change={(e) =>
+						ChangeSetting(setting, e.currentTarget.value)}
 				/>
 			{:else if typeof value === "boolean"}
 				<input
 					type="checkbox"
 					title={setting}
 					name={setting}
-					on:click={(e) => ChangeSetting(setting, typeof value, e)}
+					bind:checked={value}
+					on:change={(e) =>
+						ChangeSetting(setting, e.currentTarget.checked)}
 				/>
 			{/if}
-			<label for={setting}>{setting}</label>
+			<label for={setting}>{settingsNames[setting]}</label>
 			<br />
 		{/if}
 	{/each}

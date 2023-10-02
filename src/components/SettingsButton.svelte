@@ -9,7 +9,7 @@
 <button
 	type="button"
 	on:click={ShowSettings}
-	class={`bg-inherit text-inherit rounded border p-1 ${
+	class={`bg-inherit text-inherit rounded border p-1 h-full ${
 		$panels.settings ? "hover" : ""
 	}`}
 >
