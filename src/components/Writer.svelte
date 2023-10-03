@@ -28,6 +28,6 @@
 	.wordwrap {
 		white-space: pre;
 		overflow-wrap: normal;
-		overflow-x: scroll;
+		overflow-x: auto;
 	}
 </style>
