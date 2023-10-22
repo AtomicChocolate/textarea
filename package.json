@@ -20,7 +20,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "npx workbox generateSW workbox-config.cjs && vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "nightly-predeploy": "npm run build",
