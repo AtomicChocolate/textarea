@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { text } from "../utilities/TextStore";
+	import { settings } from "../utilities/SettingsStore";
 
 	function exportText(input: string) {
 		const element = document.createElement("a");
 		const file = new Blob([input], { type: "text/plain" });
 		element.href = URL.createObjectURL(file);
-		element.download = "textarea-exported.txt";
+		element.download = String($settings.ExportFileName);
 		element.click();
 	}
 </script>

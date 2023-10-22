@@ -1,33 +1,32 @@
-<!-- import React from "react";
-import { useAddToHomescreenPrompt } from "../utilities/PWAPromptToInstall";
+<script lang="ts">
+	import { onMount } from "svelte";
 
-const InstallPWA = () => {
-	const [prompt, promptToInstall] = useAddToHomescreenPrompt();
-	const [visible, setVisible] = React.useState(false);
+	// sorry
+	let deferredInstallEvent: any;
 
-	React.useEffect(() => {
-		if (prompt) {
-			setVisible(true);
+	onMount(() => {
+		window.addEventListener("beforeinstallprompt", (e) => {
+			e.preventDefault();
+			deferredInstallEvent = e;
+		});
+	});
+
+	async function handleInstall() {
+		deferredInstallEvent.prompt();
+		let choice = await deferredInstallEvent.userChoice;
+		if (choice.outcome === "accepted") {
+			// User accepted to install the application
+		} else {
+			// User dismissed the prompt
 		}
-	}, [prompt]);
+	}
+</script>
 
-	console.log(visible);
-
-	return (
-		<button
-			type="button"
-			onClick={promptToInstall}
-			className="`${visible ? '' : 'hidden'}` rounded border p-1"
-		>
-			Install textarea.site as an app
-		</button>
-	);
-};
-
-export default InstallPWA; -->
-
-<!-- TODO -->
-
-<button type="button" class="rounded border p-1">
-	Install textarea.site as an app
-</button>
+{#if deferredInstallEvent}<button
+		type="button"
+		class="rounded border p-1"
+		on:click={handleInstall}
+	>
+		Install textarea.site
+	</button>
+{/if}

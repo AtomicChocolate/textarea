@@ -1,5 +1,5 @@
 <script lang="ts">
-	import icon from "/logo-background-192.png";
+	import icon from "/icon-192x192.png";
 	import InstallPWA from "./InstallPWA.svelte";
 	import { panels } from "../utilities/PanelStore";
 </script>
@@ -22,6 +22,7 @@
 			stay tuned for updates. You can also report issues, star, and fork
 			the repo on GitHub.
 		</p>
+		<InstallPWA />
 		<ul>
 			<li class="text-blue-400 underline">
 				<a href="https://github.com/real-jame/textarea">
@@ -42,8 +43,6 @@
 				</a>
 			</li>
 		</ul>
-
-		<InstallPWA />
 	</div>
 	<!-- right -->
 	<div class="flex-1 text-left overflow-y-auto">
@@ -61,13 +60,11 @@
 			</h2>
 			<p>
 				textarea.site has been inactive for almost a year... no better
-				time to revive it than the present! Hope you enjoy the
-				smattering of improvements and additions across the board! In
-				fact, I'll have to split the change list into separate groups.
+				time to revive it than the present! There are a few neat
+				changes, so enjoy.
 			</p>
-			<p class="text-xl font-bold">Theming improvements:</p>
+			<p class="text-xl font-bold">Theming improvements</p>
 			<ul class="list-disc w-[90%] m-auto mb-1">
-				<li>TODO: this</li>
 				<li>New themes: Monokai, Solarized Dark, Solarized Light.</li>
 				<li>
 					Default theme is now based off your device's dark mode
@@ -79,10 +76,11 @@
 				</li>
 				<li>Your selected theme now saves.</li>
 			</ul>
-			<p class="text-xl font-bold">Utility/footer improvements:</p>
+			<p class="text-xl font-bold">Utility improvements</p>
 			<ul class="list-disc w-[90%] m-auto mb-1">
-				<li>Added About/Releases screen.</li>
-				<li>Improved footer styling.</li>
+				<li>Added About/Releases panel.</li>
+				<li>Added Settings panel.</li>
+				<li>Footer styling no longer sucks.</li>
 			</ul>
 		</div>
 		<div>
@@ -96,7 +94,6 @@
 				</a>
 				)
 			</h2>
-			<p class="mb-1">This update adds initial PWA support.</p>
 			<ul class="list-disc w-[90%] m-auto mb-1">
 				<li>
 					The website can now be installed to your desktop / home
@@ -114,10 +111,6 @@
 					</a>
 					.
 				</li>
-				<li>
-					Removed a footer item displaying the current save status
-					(saved, saving, unsaved)
-				</li>
 			</ul>
 		</div>
 		<div>
@@ -131,7 +124,6 @@
 				</a>
 				)
 			</h2>
-			<p>This update adds additional support for themes.</p>
 			<ul class="list-disc w-[90%] m-auto">
 				<li>2 themes, Light and Dark. More to come.</li>
 				<li>Footer bar items look a bit nicer now</li>
@@ -149,9 +141,6 @@
 				)
 			</h2>
 			<p>The first public release, used on textarea.site.</p>
-			<ul class="list-disc w[90%] w[90%] m-auto">
-				<li>🎉</li>
-			</ul>
 		</div>
 	</div>
 </div>

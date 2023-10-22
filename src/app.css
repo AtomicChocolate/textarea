@@ -2,17 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.about,
-.settings {
+.about {
 	transition-property: max-height;
 }
-
-.show-about,
-.show-settings {
-	height: 50vh !important;
+.settings {
+	transition-property: top;
 }
 
-.about.show-about, .settings.show-settings {
+.show-about {
+	height: 50vh !important;
+}
+.show-settings {
+	height: calc(100vh - 11rem) !important;
+}
+
+.about.show-about {
 	visibility: visible;
 	max-height: 50vh !important;
+}
+.settings.show-settings {
+	visibility: visible;
+	top: -5px;
 }

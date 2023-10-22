@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/textarea/dev-sw.js?dev-sw', { scope: '/textarea/', type: 'classic' })

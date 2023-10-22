@@ -131,7 +131,7 @@ export const allFonts = new Set(
 
 	const fontAvailable = new Set();
 
-	for (const font of fontCheck.values()) {
+	for (const font of allFonts.values()) {
 		if (document.fonts.check(`12px "${font}"`)) {
 			fontAvailable.add(font);
 		}

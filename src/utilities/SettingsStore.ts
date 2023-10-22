@@ -7,6 +7,7 @@ export type SettingsNamesType = {
 	WordWrap: string;
 	SpellCheck: string;
 	FontFamily: string;
+	ExportFileName: string;
 };
 
 const settingsNames = {
@@ -14,6 +15,7 @@ const settingsNames = {
 	WordWrap: "Word Wrap",
 	SpellCheck: "Spell Check",
 	FontFamily: "Font Family",
+	ExportFileName: "Export File Name",
 } as SettingsNamesType;
 
 const settings = writable(getSettings());

@@ -9,6 +9,7 @@ export type SettingsType = {
 	WordWrap: boolean;
 	SpellCheck: boolean;
 	FontFamily: string;
+	ExportFileName: string;
 };
 
 const DEFAULT_SETTINGS = {
@@ -21,6 +22,7 @@ const DEFAULT_SETTINGS = {
 	SpellCheck: true,
 	FontFamily:
 		'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+	ExportFileName: "textarea-exported.txt",
 } as SettingsType;
 
 function getFromStorage(key: string, defaultValue: any = ""): any {
@@ -42,7 +44,6 @@ function saveText(text: string): void {
 
 // Settings
 function getSettings(): SettingsType {
-	// Parse the JSON string from localStorage into an object
 	const settings = getFromStorage(
 		STORAGE_KEYS.SETTINGS,
 		JSON.stringify(DEFAULT_SETTINGS)
@@ -51,7 +52,6 @@ function getSettings(): SettingsType {
 }
 
 function saveSettings(settings: SettingsType): void {
-	// Convert the settings object into a JSON string for storage
 	settings = { ...DEFAULT_SETTINGS, ...settings };
 	saveToStorage(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
 }

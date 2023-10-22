@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class={`settings invisible max-h-0 transition-all ${
+	class={`settings invisible relative top-[500px] max-h-40 transition-all overflow-y-auto pb-4 ${
 		$panels.settings ? "show-settings" : ""
 	}`}
 >
