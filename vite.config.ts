@@ -14,8 +14,8 @@ export default defineConfig({
 				theme_color: "#1b1b1b",
 				background_color: "#1b1b1b",
 				display: "standalone",
-				scope: "/",
-				start_url: "/",
+				scope: "/textarea",
+				start_url: "/textarea",
 				description:
 					"A persistent textbox that holds on to anything you write, without ads or trackers.",
 				name: "textarea.site",
@@ -45,5 +45,5 @@ export default defineConfig({
 			},
 		}),
 	],
-	base: "/",
+	base: "/textarea",
 });
